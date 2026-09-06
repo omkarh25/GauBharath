@@ -19,7 +19,7 @@ export default function AdminProductsPage() {
   const [deleting, setDeleting] = useState<string | null>(null);
 
   useEffect(() => {
-    const unsub = onSnapshot(collection(db, COLLECTIONS.products), (s) => {
+    const unsub = onSnapshot(collection(db(), COLLECTIONS.products), (s) => {
       setProducts(s.docs.map((d) => ({ id: d.id, ...(d.data() as Omit<Product, 'id'>) })));
       setLoading(false);
     });
@@ -30,7 +30,7 @@ export default function AdminProductsPage() {
     if (!confirm(`Delete "${p.titleEn}"? This cannot be undone.`)) return;
     setDeleting(p.id);
     try {
-      await deleteDoc(doc(db, COLLECTIONS.products, p.id));
+      await deleteDoc(doc(db(), COLLECTIONS.products, p.id));
     } finally {
       setDeleting(null);
     }

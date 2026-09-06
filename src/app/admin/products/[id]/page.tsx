@@ -17,7 +17,7 @@ export default function EditProductPage() {
 
   useEffect(() => {
     if (!id) return;
-    const unsub = onSnapshot(doc(db, COLLECTIONS.products, id), (snap) => {
+    const unsub = onSnapshot(doc(db(), COLLECTIONS.products, id), (snap) => {
       if (snap.exists()) {
         setProduct({ id: snap.id, ...(snap.data() as Omit<Product, 'id'>) });
       }

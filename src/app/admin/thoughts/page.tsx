@@ -23,7 +23,7 @@ export default function AdminThoughtsPage() {
   const [creating, setCreating] = useState(false);
 
   useEffect(() => {
-    const q = query(collection(db, COLLECTIONS.thoughts), orderBy('order', 'asc'));
+    const q = query(collection(db(), COLLECTIONS.thoughts), orderBy('order', 'asc'));
     const unsub = onSnapshot(q, (s) => {
       setThoughts(s.docs.map((d) => ({ id: d.id, ...(d.data() as Omit<Thought, 'id'>) })));
       setLoading(false);
@@ -44,7 +44,7 @@ export default function AdminThoughtsPage() {
 
   async function save() {
     if (creating) {
-      await addDoc(collection(db, COLLECTIONS.thoughts), {
+      await addDoc(collection(db(), COLLECTIONS.thoughts), {
         text: draft.text.trim(),
         author: draft.author.trim() || 'Modaksha',
         backgroundUrl: draft.backgroundUrl.trim() || '/assets/thoughts/sunrise.svg',
@@ -53,7 +53,7 @@ export default function AdminThoughtsPage() {
         updatedAt: Date.now(),
       });
     } else if (editing) {
-      await updateDoc(doc(db, COLLECTIONS.thoughts, editing), {
+      await updateDoc(doc(db(), COLLECTIONS.thoughts, editing), {
         text: draft.text.trim(),
         author: draft.author.trim() || 'Modaksha',
         backgroundUrl: draft.backgroundUrl.trim(),
@@ -67,7 +67,7 @@ export default function AdminThoughtsPage() {
 
   async function handleDelete(id: string) {
     if (!confirm('Delete this thought?')) return;
-    await deleteDoc(doc(db, COLLECTIONS.thoughts, id));
+    await deleteDoc(doc(db(), COLLECTIONS.thoughts, id));
   }
 
   return (

@@ -28,7 +28,7 @@ export function useAdminAuth() {
     .filter(Boolean);
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, (u) => {
+    const unsub = onAuthStateChanged(auth(), (u) => {
       setUser(u);
       setIsAdmin(!!u?.email && adminEmails.includes(u.email.toLowerCase()));
       setLoading(false);
@@ -40,9 +40,9 @@ export function useAdminAuth() {
     setLoading(true);
     setError(null);
     try {
-      const cred = await signInWithEmailAndPassword(auth, email, password);
+      const cred = await signInWithEmailAndPassword(auth(), email, password);
       if (!adminEmails.includes(cred.user.email?.toLowerCase() ?? '')) {
-        await fbSignOut(auth);
+        await fbSignOut(auth());
         throw new Error('This email is not authorised as admin.');
       }
       logger.info('Admin signed in:', cred.user.email);
@@ -56,7 +56,7 @@ export function useAdminAuth() {
   }
 
   async function signOut() {
-    await fbSignOut(auth);
+    await fbSignOut(auth());
     logger.info('Admin signed out');
   }
 

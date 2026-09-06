@@ -59,7 +59,7 @@ export function ProductForm({ initial, onSaved }: ProductFormProps) {
         order: initial?.order ?? 0,
       };
 
-      await setDoc(doc(db, COLLECTIONS.products, id), data);
+      await setDoc(doc(db(), COLLECTIONS.products, id), data);
       logger.info('Product saved:', id);
       onSaved?.(id);
     } catch (err) {

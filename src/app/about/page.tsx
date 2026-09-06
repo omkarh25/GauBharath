@@ -31,6 +31,10 @@ const values = [
   },
 ];
 
+// Modaksha's social channels
+const MODAKSHA_INSTAGRAM = 'https://www.instagram.com/el_do_rado2.0?stkn=MTRsdTByaHF1bnU4Mw==';
+const MODAKSHA_YOUTUBE = 'https://youtube.com/@colourfullworld6794?si=4v_yMh-WGBvEgoXr';
+
 export default function AboutPage() {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -89,6 +93,42 @@ export default function AboutPage() {
                 heal the body — is prepared by hand at the shala, with the same care that has
                 been passed down for generations.
               </p>
+
+              {/* Connect with Modaksha */}
+              <div className="mt-8 pt-6 border-t border-cream-100/10">
+                <div className="text-cream-200/60 text-xs tracking-[0.3em] uppercase mb-3">
+                  Connect with Modaksha
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href={MODAKSHA_INSTAGRAM}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Modaksha on Instagram"
+                    className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-cream-100/15 bg-earth-800/40 hover:border-saffron-400 hover:bg-earth-800/70 transition-all"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="text-saffron-400" aria-hidden>
+                      <rect x="3" y="3" width="18" height="18" rx="5" />
+                      <circle cx="12" cy="12" r="4" />
+                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span className="text-cream-100 text-sm group-hover:text-saffron-300 transition-colors">Instagram</span>
+                  </a>
+                  <a
+                    href={MODAKSHA_YOUTUBE}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Modaksha on YouTube"
+                    className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-full border border-cream-100/15 bg-earth-800/40 hover:border-saffron-400 hover:bg-earth-800/70 transition-all"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="text-saffron-400" aria-hidden>
+                      <rect x="2" y="5" width="20" height="14" rx="3" />
+                      <path d="M10 9 L15 12 L10 15 Z" fill="currentColor" stroke="none" />
+                    </svg>
+                    <span className="text-cream-100 text-sm group-hover:text-saffron-300 transition-colors">YouTube</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

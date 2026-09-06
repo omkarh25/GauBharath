@@ -17,7 +17,7 @@ export function useThoughts() {
     let unsub: (() => void) | null = null;
 
     try {
-      const q = query(collection(db, COLLECTIONS.thoughts), orderBy('order', 'asc'));
+      const q = query(collection(db(), COLLECTIONS.thoughts), orderBy('order', 'asc'));
       unsub = onSnapshot(
         q,
         (snap) => {

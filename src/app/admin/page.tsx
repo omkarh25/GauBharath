@@ -16,10 +16,10 @@ export default function AdminDashboardPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubP = onSnapshot(collection(db, COLLECTIONS.products), (s) => {
+    const unsubP = onSnapshot(collection(db(), COLLECTIONS.products), (s) => {
       setProducts(s.docs.map((d) => ({ id: d.id, ...(d.data() as Omit<Product, 'id'>) })));
     });
-    const unsubT = onSnapshot(collection(db, COLLECTIONS.thoughts), (s) => {
+    const unsubT = onSnapshot(collection(db(), COLLECTIONS.thoughts), (s) => {
       setThoughts(s.docs.map((d) => ({ id: d.id, ...(d.data() as Omit<Thought, 'id'>) })));
     });
 

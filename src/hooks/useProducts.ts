@@ -28,7 +28,7 @@ export function useProducts(opts?: { featuredOnly?: boolean }) {
     setLoading(true);
 
     try {
-      const colRef = collection(db, COLLECTIONS.products);
+      const colRef = collection(db(), COLLECTIONS.products);
       const constraints = opts?.featuredOnly ? [where('featured', '==', true)] : [];
       const q = query(colRef, ...constraints, orderBy('order', 'asc'));
 
@@ -105,7 +105,7 @@ export function useProductBySlug(slug: string) {
 
 /** Imperatively fetch products once (used in admin / server-side). */
 export async function fetchProducts(): Promise<Product[]> {
-  const snap = await getDocs(collection(db, COLLECTIONS.products));
+  const snap = await getDocs(collection(db(), COLLECTIONS.products));
   if (snap.empty) {
     return SEED_PRODUCTS.map((p, i) => ({
       ...p,
