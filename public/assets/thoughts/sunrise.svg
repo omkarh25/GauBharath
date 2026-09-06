@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1A0A05"/>
+      <stop offset="20%" stop-color="#3A1A0A"/>
+      <stop offset="50%" stop-color="#8E4214"/>
+      <stop offset="75%" stop-color="#D2691E"/>
+      <stop offset="100%" stop-color="#EAA65C"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="50%" cy="100%" r="50%">
+      <stop offset="0%" stop-color="#FFF4D6"/>
+      <stop offset="40%" stop-color="#FFD580"/>
+      <stop offset="100%" stop-color="#D2691E" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sun-disc" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFF4D6"/>
+      <stop offset="80%" stop-color="#FFD580"/>
+      <stop offset="100%" stop-color="#EAA65C"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+
+  <!-- Sun glow -->
+  <circle cx="960" cy="900" r="700" fill="url(#sun)" opacity="0.6"/>
+  <circle cx="960" cy="850" r="180" fill="url(#sun-disc)" opacity="0.95"/>
+
+  <!-- Horizon line -->
+  <rect y="850" width="1920" height="1" fill="#FFF4D6" opacity="0.3"/>
+
+  <!-- Distant mountains silhouette -->
+  <path d="M0,900 L150,800 L320,860 L500,750 L700,820 L900,780 L1100,830 L1300,750 L1500,810 L1700,790 L1920,830 L1920,1080 L0,1080 Z" fill="#0E0502" opacity="0.85"/>
+
+  <!-- Closer hill -->
+  <path d="M0,980 L200,920 L400,960 L600,910 L800,950 L1000,920 L1200,960 L1400,930 L1600,950 L1920,940 L1920,1080 L0,1080 Z" fill="#1A0A05" opacity="0.9"/>
+
+  <!-- Subtle rays -->
+  <g opacity="0.15" stroke="#FFF4D6" stroke-width="2" fill="none">
+    <line x1="960" y1="850" x2="200" y2="200"/>
+    <line x1="960" y1="850" x2="500" y2="100"/>
+    <line x1="960" y1="850" x2="960" y2="50"/>
+    <line x1="960" y1="850" x2="1420" y2="100"/>
+    <line x1="960" y1="850" x2="1720" y2="200"/>
+  </g>
+
+  <!-- Birds -->
+  <g stroke="#1A0A05" stroke-width="3" fill="none" opacity="0.7">
+    <path d="M600,300 Q620,290 640,300 Q660,290 680,300"/>
+    <path d="M1200,250 Q1215,243 1230,250 Q1245,243 1260,250"/>
+    <path d="M1400,400 Q1415,393 1430,400 Q1445,393 1460,400"/>
+  </g>
+
+  <!-- Vignette -->
+  <rect width="1920" height="1080" fill="url(#vignette)" opacity="0.4"/>
+  <defs>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="75%">
+      <stop offset="60%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.6"/>
+    </radialGradient>
+  </defs>
+</svg>

@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: 26 20 16;
+  --color-text: 245 230 211;
+  --color-saffron: 210 105 30;
+  --color-cream: 245 230 211;
+  --color-forest: 45 80 22;
+  --color-earth: 92 58 30;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: rgb(var(--color-bg));
+}
+
+body {
+  color: rgb(var(--color-text));
+  background-color: rgb(var(--color-bg));
+  font-feature-settings: 'ss01', 'ss02';
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom selection */
+::selection {
+  background-color: rgba(210, 105, 30, 0.4);
+  color: rgb(245, 230, 211);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(15, 11, 8);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8E4214, #D2691E);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #D2691E, #EAA65C);
+}
+
+/* Lenis smooth scroll */
+html.lenis {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Reveal animation helpers */
+.reveal-text .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-text .word.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Full-bleed utility */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* Grain texture overlay */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+}
+
+/* Shimmer for loading states */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(245, 230, 211, 0.04) 0%,
+    rgba(245, 230, 211, 0.12) 50%,
+    rgba(245, 230, 211, 0.04) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2.5s linear infinite;
+}
+
+/* Vignette overlay */
+.vignette::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(0, 0, 0, 0.6) 100%);
+  pointer-events: none;
+}
+
+/* Text gradient utility */
+.text-gradient-saffron {
+  background: linear-gradient(135deg, #EAA65C 0%, #D2691E 50%, #8E4214 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.text-gradient-cream {
+  background: linear-gradient(135deg, #FAF6F0 0%, #DEB886 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Button base */
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-saffron-500 hover:bg-saffron-400 text-cream-50 font-medium tracking-wide transition-all duration-300 hover:shadow-[0_8px_24px_rgba(210,105,30,0.4)] hover:-translate-y-0.5;
+}
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-cream-300/30 text-cream-100 hover:bg-cream-100/10 font-medium tracking-wide transition-all duration-300;
+}
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full text-cream-200 hover:text-cream-50 transition-colors duration-300;
+}
+
+/* Card */
+.card {
+  @apply rounded-2xl bg-earth-800/40 backdrop-blur-sm border border-cream-100/10 overflow-hidden transition-all duration-500;
+}
+.card:hover {
+  @apply border-saffron-500/40 shadow-[0_12px_40px_rgba(0,0,0,0.4)];
+}
+
+/* Section padding */
+.section {
+  @apply py-20 md:py-32 px-6 md:px-12;
+}
+.container-narrow {
+  @apply max-w-5xl mx-auto;
+}
+.container-wide {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Disable text selection on decorative elements */
+.no-select {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* No scroll for thought player */
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}

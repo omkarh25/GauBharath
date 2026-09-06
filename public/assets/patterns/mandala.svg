@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <g transform="translate(100,100)" fill="none" stroke="#D2691E" stroke-width="0.5">
+    <circle r="90"/>
+    <circle r="75"/>
+    <circle r="60"/>
+    <circle r="45"/>
+    <circle r="30"/>
+    <circle r="15"/>
+    <!-- 8-fold petals -->
+    <g opacity="0.6">
+      <path d="M0,-90 Q15,-75 0,-60 Q-15,-75 0,-90"/>
+      <path d="M0,-90 Q15,-75 0,-60 Q-15,-75 0,-90" transform="rotate(45)"/>
+      <path d="M0,-90 Q15,-75 0,-60 Q-15,-75 0,-90" transform="rotate(90)"/>
+      <path d="M0,-90 Q15,-75 0,-60 Q-15,-75 0,-90" transform="rotate(135)"/>
+      <path d="M0,-90 Q15,-75 0,-60 Q-15,-75 0,-90" transform="rotate(180)"/>
+      <path d="M0,-90 Q15,-75 0,-60 Q-15,-75 0,-90" transform="rotate(225)"/>
+      <path d="M0,-90 Q15,-75 0,-60 Q-15,-75 0,-90" transform="rotate(270)"/>
+      <path d="M0,-90 Q15,-75 0,-60 Q-15,-75 0,-90" transform="rotate(315)"/>
+    </g>
+    <!-- Star points -->
+    <g opacity="0.5">
+      <line x1="0" y1="-90" x2="0" y2="-15"/>
+      <line x1="0" y1="-90" x2="0" y2="-15" transform="rotate(45)"/>
+      <line x1="0" y1="-90" x2="0" y2="-15" transform="rotate(90)"/>
+      <line x1="0" y1="-90" x2="0" y2="-15" transform="rotate(135)"/>
+      <line x1="0" y1="-90" x2="0" y2="-15" transform="rotate(180)"/>
+      <line x1="0" y1="-90" x2="0" y2="-15" transform="rotate(225)"/>
+      <line x1="0" y1="-90" x2="0" y2="-15" transform="rotate(270)"/>
+      <line x1="0" y1="-90" x2="0" y2="-15" transform="rotate(315)"/>
+    </g>
+  </g>
+</svg>

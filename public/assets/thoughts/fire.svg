@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bg-fire" cx="50%" cy="100%" r="80%">
+      <stop offset="0%" stop-color="#EAA65C"/>
+      <stop offset="30%" stop-color="#D2691E"/>
+      <stop offset="70%" stop-color="#3A1A0A"/>
+      <stop offset="100%" stop-color="#0A0500"/>
+    </radialGradient>
+    <radialGradient id="core" cx="50%" cy="80%" r="40%">
+      <stop offset="0%" stop-color="#FFF4D6" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#FFD580" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#D2691E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg-fire)"/>
+
+  <!-- Central glow -->
+  <circle cx="960" cy="900" r="600" fill="url(#core)" opacity="0.8"/>
+
+  <!-- Big flame -->
+  <g transform="translate(960,950)">
+    <path d="M0,-700 Q-180,-400 -140,-200 Q-220,-280 -200,-100 Q-260,-50 -200,80 Q-260,150 -150,250 Q-180,330 -50,380 Q-30,300 0,310 Q30,300 50,380 Q180,330 150,250 Q260,150 200,80 Q260,-50 200,-100 Q220,-280 140,-200 Q180,-400 0,-700 Z" fill="#FFF4D6" opacity="0.4"/>
+    <path d="M0,-500 Q-110,-280 -90,-100 Q-150,-160 -130,-20 Q-180,30 -130,150 Q-160,260 -50,310 Q-30,240 0,250 Q30,240 50,310 Q160,260 130,150 Q180,30 130,-20 Q150,-160 90,-100 Q110,-280 0,-500 Z" fill="#FFD580" opacity="0.7"/>
+    <path d="M0,-350 Q-70,-200 -60,-50 Q-100,-100 -80,30 Q-110,100 -50,180 Q-30,120 0,140 Q30,120 50,180 Q110,100 80,30 Q100,-100 60,-50 Q70,-200 0,-350 Z" fill="#EAA65C" opacity="0.95"/>
+  </g>
+
+  <!-- Sparks -->
+  <g fill="#FFF4D6" opacity="0.9">
+    <circle cx="400" cy="400" r="4"/>
+    <circle cx="450" cy="500" r="2"/>
+    <circle cx="1500" cy="350" r="3"/>
+    <circle cx="1450" cy="500" r="2"/>
+    <circle cx="300" cy="700" r="2.5"/>
+    <circle cx="1600" cy="700" r="3"/>
+    <circle cx="600" cy="200" r="2"/>
+    <circle cx="1300" cy="180" r="2.5"/>
+    <circle cx="200" cy="600" r="1.5"/>
+    <circle cx="1700" cy="600" r="2"/>
+    <circle cx="800" cy="150" r="2"/>
+    <circle cx="1100" cy="200" r="2"/>
+  </g>
+
+  <!-- Vignette -->
+  <defs>
+    <radialGradient id="vignette3" cx="50%" cy="50%" r="75%">
+      <stop offset="50%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.8"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#vignette3)"/>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky-temple" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0A0500"/>
+      <stop offset="30%" stop-color="#1A0A05"/>
+      <stop offset="70%" stop-color="#3A1A0A"/>
+      <stop offset="100%" stop-color="#5C3A1E"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFD580" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FFD580" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#sky-temple)"/>
+
+  <!-- Halo around temple -->
+  <circle cx="960" cy="500" r="600" fill="url(#halo)"/>
+
+  <!-- Temple silhouette -->
+  <g transform="translate(560,200)" fill="#0A0500">
+    <!-- Base -->
+    <rect x="0" y="500" width="800" height="200"/>
+    <!-- Pillars -->
+    <rect x="100" y="350" width="60" height="200"/>
+    <rect x="370" y="350" width="60" height="200"/>
+    <rect x="640" y="350" width="60" height="200"/>
+    <!-- Architrave -->
+    <rect x="50" y="320" width="700" height="40"/>
+    <!-- Shikhara (tower) base -->
+    <rect x="280" y="180" width="240" height="140"/>
+    <!-- Shikhara tiers -->
+    <path d="M280,180 L520,180 L500,140 L300,140 Z"/>
+    <path d="M300,140 L500,140 L480,100 L320,100 Z"/>
+    <path d="M320,100 L480,100 L460,60 L340,60 Z"/>
+    <path d="M340,60 L460,60 L440,20 L360,20 Z"/>
+    <!-- Kalasha -->
+    <circle cx="400" cy="0" r="20"/>
+    <rect x="395" y="-20" width="10" height="20"/>
+    <!-- Inner sanctum light -->
+    <rect x="370" y="420" width="60" height="80" fill="#D2691E" opacity="0.6"/>
+  </g>
+
+  <!-- Diya flames along base -->
+  <g fill="#FFD580" opacity="0.9">
+    <ellipse cx="700" cy="700" rx="3" ry="6"/>
+    <ellipse cx="750" cy="700" rx="3" ry="6"/>
+    <ellipse cx="800" cy="700" rx="3" ry="6"/>
+    <ellipse cx="1120" cy="700" rx="3" ry="6"/>
+    <ellipse cx="1170" cy="700" rx="3" ry="6"/>
+    <ellipse cx="1220" cy="700" rx="3" ry="6"/>
+  </g>
+
+  <!-- Distant stars -->
+  <g fill="#FFF4D6">
+    <circle cx="200" cy="150" r="2"/>
+    <circle cx="450" cy="80" r="1.5"/>
+    <circle cx="700" cy="100" r="2"/>
+    <circle cx="1300" cy="120" r="2.5"/>
+    <circle cx="1500" cy="200" r="1.8"/>
+    <circle cx="1750" cy="100" r="2"/>
+    <circle cx="350" cy="250" r="1.5"/>
+    <circle cx="1700" cy="350" r="1.8"/>
+  </g>
+
+  <!-- Ground -->
+  <rect y="850" width="1920" height="230" fill="#0A0500"/>
+
+  <!-- Vignette -->
+  <defs>
+    <radialGradient id="vignette4" cx="50%" cy="50%" r="75%">
+      <stop offset="50%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.7"/>
+    </radialGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#vignette4)"/>
+</svg>

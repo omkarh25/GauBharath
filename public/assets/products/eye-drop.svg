@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#3A2410"/>
+      <stop offset="100%" stop-color="#0E0904"/>
+    </radialGradient>
+    <linearGradient id="bottle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FAF6F0" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#D8B894" stop-opacity="0.7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <rect x="20" y="20" width="360" height="360" fill="none" stroke="#8E4214" stroke-width="1" opacity="0.4"/>
+
+  <ellipse cx="200" cy="240" rx="100" ry="130" fill="#D2691E" opacity="0.1"/>
+
+  <!-- Eye drop bottle -->
+  <g transform="translate(150,80)">
+    <!-- nozzle -->
+    <rect x="42" y="0" width="16" height="20" fill="#3A2410"/>
+    <rect x="38" y="20" width="24" height="8" fill="#5C3A1E"/>
+    <!-- cap -->
+    <rect x="32" y="28" width="36" height="30" rx="3" fill="#5C3A1E"/>
+    <!-- neck -->
+    <rect x="38" y="58" width="24" height="14" fill="url(#bottle)"/>
+    <!-- body -->
+    <rect x="10" y="72" width="80" height="180" rx="10" fill="url(#bottle)"/>
+    <rect x="14" y="76" width="72" height="172" rx="8" fill="none" stroke="#7A4F2A" stroke-width="0.8"/>
+    <rect x="20" y="78" width="6" height="168" fill="#FFFFFF" opacity="0.4"/>
+
+    <!-- liquid -->
+    <rect x="14" y="140" width="72" height="108" rx="8" fill="#D2691E" opacity="0.4"/>
+
+    <!-- Label -->
+    <rect x="14" y="100" width="72" height="90" rx="2" fill="#5C3A1E"/>
+    <rect x="18" y="104" width="64" height="82" rx="2" fill="none" stroke="#FAE6CF" stroke-width="0.6"/>
+    <text x="50" y="120" font-family="Georgia, serif" font-size="6" font-weight="bold" fill="#FAE6CF" text-anchor="middle" letter-spacing="1">NETRA</text>
+    <text x="50" y="130" font-family="Georgia, serif" font-size="6" font-weight="bold" fill="#FAE6CF" text-anchor="middle" letter-spacing="1">SHUDDHI</text>
+    <line x1="22" y1="136" x2="78" y2="136" stroke="#FAE6CF" stroke-width="0.4"/>
+    <text x="50" y="146" font-family="Georgia, serif" font-size="5" fill="#FAE6CF" text-anchor="middle" letter-spacing="0.5">EYE CLEANER</text>
+    <text x="50" y="180" font-family="Georgia, serif" font-size="4.5" fill="#FAE6CF" text-anchor="middle" letter-spacing="0.5" opacity="0.8">gau bharath</text>
+  </g>
+
+  <!-- Decorative droplets -->
+  <g fill="#D2691E" opacity="0.4">
+    <path d="M150,40 Q145,50 150,55 Q155,50 150,40 Z"/>
+    <path d="M250,50 Q245,60 250,65 Q255,60 250,50 Z"/>
+  </g>
+</svg>

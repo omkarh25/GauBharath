@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#3A2410"/>
+      <stop offset="100%" stop-color="#0E0904"/>
+    </radialGradient>
+    <linearGradient id="oil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C8924A"/>
+      <stop offset="50%" stop-color="#A66B2E"/>
+      <stop offset="100%" stop-color="#5C3A1E"/>
+    </linearGradient>
+    <linearGradient id="dropper-cap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A2410"/>
+      <stop offset="100%" stop-color="#180D04"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <rect x="20" y="20" width="360" height="360" fill="none" stroke="#8E4214" stroke-width="1" opacity="0.4"/>
+
+  <ellipse cx="200" cy="240" rx="110" ry="130" fill="#D2691E" opacity="0.1"/>
+
+  <!-- Dropper bottle -->
+  <g transform="translate(140,70)">
+    <!-- dropper bulb -->
+    <rect x="50" y="0" width="20" height="40" rx="4" fill="url(#dropper-cap)"/>
+    <!-- dropper cap -->
+    <rect x="40" y="40" width="40" height="35" rx="3" fill="url(#dropper-cap)"/>
+    <!-- neck -->
+    <rect x="48" y="75" width="24" height="20" fill="url(#oil)"/>
+    <!-- body -->
+    <path d="M30,95 Q30,90 35,90 L85,90 Q90,90 90,95 L100,115 Q110,135 110,160 L110,260 Q110,280 90,280 L30,280 Q10,280 10,260 L10,160 Q10,135 20,115 Z" fill="url(#oil)"/>
+    <!-- highlight -->
+    <path d="M20,120 Q20,105 35,105 L42,105 L42,260 Q35,260 30,260 Q20,260 20,250 Z" fill="#EAA65C" opacity="0.55"/>
+
+    <!-- Label -->
+    <rect x="20" y="155" width="100" height="100" rx="3" fill="#FAE6CF"/>
+    <rect x="24" y="159" width="92" height="92" rx="2" fill="none" stroke="#8E4214" stroke-width="0.8"/>
+    <text x="70" y="183" font-family="Georgia, serif" font-size="9" font-weight="bold" fill="#5C3A1E" text-anchor="middle" letter-spacing="1.5">GAU</text>
+    <text x="70" y="198" font-family="Georgia, serif" font-size="9" font-weight="bold" fill="#5C3A1E" text-anchor="middle" letter-spacing="1.5">BHARATH</text>
+    <line x1="32" y1="208" x2="108" y2="208" stroke="#8E4214" stroke-width="0.5"/>
+    <text x="70" y="222" font-family="Georgia, serif" font-size="6.5" fill="#5C3A1E" text-anchor="middle" letter-spacing="0.8">HERBAL</text>
+    <text x="70" y="232" font-family="Georgia, serif" font-size="6.5" fill="#5C3A1E" text-anchor="middle" letter-spacing="0.8">OIL</text>
+    <text x="70" y="247" font-family="Georgia, serif" font-size="5.5" fill="#8E4214" text-anchor="middle" letter-spacing="0.5">— 100ml —</text>
+  </g>
+
+  <g fill="#FFD580">
+    <circle cx="80" cy="100" r="1.4" opacity="0.7"/>
+    <circle cx="320" cy="130" r="1.2" opacity="0.6"/>
+    <circle cx="70" cy="300" r="1.5" opacity="0.5"/>
+    <circle cx="330" cy="280" r="1.3" opacity="0.6"/>
+  </g>
+</svg>
